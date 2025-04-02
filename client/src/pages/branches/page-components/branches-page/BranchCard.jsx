@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {
     Box,
+    Grid,
     Card,
     CardActionArea,
     CardContent,
@@ -12,6 +13,8 @@ import {
 import {
     SupervisorAccountTwoTone as SupervisorAccountTwoToneIcon,
     DirectionsCarFilledTwoTone as DirectionsCarFilledTwoToneIcon,
+    FmdGoodTwoTone as FmdGoodTwoToneIcon,
+    Tag as TagIcon
 } from '@mui/icons-material';
 
 
@@ -28,12 +31,28 @@ export default function BranchCard({ branch }) {
 
                 <CardContent>
                     <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 20 }}>
-                        {branch.name} {branch.id}
+                        {branch.name}
                     </Typography>
 
-                    <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>
-                        {branch.location}
-                    </Typography>
+                    <Grid container mb={2} gap={1} directio={'row'}>
+                        <Grid>
+                            <Box display="flex" alignItems="center">
+                                <TagIcon />
+                                <Typography ml={1} sx={{ color: 'text.secondary' }}>
+                                    {branch.id}
+                                </Typography>
+                            </Box>
+                        </Grid>
+
+                        <Grid>
+                            <Box display="flex" alignItems="center">
+                                <FmdGoodTwoToneIcon />
+                                <Typography ml={1} sx={{ color: 'text.secondary' }}>
+                                    {branch.location}
+                                </Typography>
+                            </Box>
+                        </Grid>
+                    </Grid>
 
                     <Box display="flex" alignItems="center">
                         <SupervisorAccountTwoToneIcon />
