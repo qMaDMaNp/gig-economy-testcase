@@ -11,7 +11,9 @@ class BranchController extends Controller
      */
     public function index()
     {
-        //
+        return json_encode([
+            1 => '1'
+        ]);
     }
 
     /**
