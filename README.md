@@ -2,9 +2,7 @@
 
 Ostatni commit, który zdążyłem zrobić w ciągu 3 godzin, to Add branch cards to UI (5dfc569). Wszystko po tym mnie interesuje w kontekście dokończenia zadania.
 
-<a href="https://github.com/qMaDMaNp/gig-economy-testcase/tree/5dfc5697cb850c15c0210045c7a7f776a7db7aa3"></a>
-Link to repo at that point
-</a>
+Link to repo at that point: https://github.com/qMaDMaNp/gig-economy-testcase/tree/5dfc5697cb850c15c0210045c7a7f776a7db7aa3
 
 
 # Jak uruchomić projekt? (server) 
