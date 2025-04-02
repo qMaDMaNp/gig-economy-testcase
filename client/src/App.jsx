@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { Link, Routes, Route } from 'react-router-dom';
 
-import axios from 'axios';
-
-import { Box, Grid, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material';
 
-import BranchCard from './components/BranchCard';
+import Branches from './pages/branches/BranchesPage';
+import Managers from './pages/managers/ManagersPage';
+import Vehicles from './pages/vehicles/VehiclesPage';
+
+import Navbar from './components/Navbar';
 
 import './App.css'
 
@@ -15,43 +17,17 @@ const theme = createTheme({
   },
 });
 
-
-const branches = [
-  {
-    id: 1,
-    name: 'Warszawa branch',
-    location: 'Warszawa',
-    managersCount: 2,
-    vehiclesCount: 20
-  },
-
-  {
-    id: 2,
-    name: 'Wroclaw branch',
-    location: 'Wroclaw',
-    managersCount: 2,
-    vehiclesCount: 10
-  },
-];
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <Navbar />
+      
       <Box sx={{ p: 2 }}>
-        <Box mb={2}>
-          <Typography variant="h6" color="initial">
-            Branches
-          </Typography>
-        </Box>
-
-        <Grid container gap={2}>
-          {branches.map(x => (
-            <Grid key={x.id} item>
-              <BranchCard branch={x} />
-            </Grid>
-          ))}
-
-        </Grid>
+        <Routes>
+          <Route path="/" element={<Branches />} />
+          <Route path="/managers" element={<Managers />} />
+          <Route path="/vehicles" element={<Vehicles />} />
+        </Routes>
       </Box>
     </ThemeProvider >
   )
