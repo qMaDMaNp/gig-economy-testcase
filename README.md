@@ -4,6 +4,9 @@ Ostatni commit, który zdążyłem zrobić w ciągu 3 godzin, to Add branch card
 
 Link to repo at that point: https://github.com/qMaDMaNp/gig-economy-testcase/tree/5dfc5697cb850c15c0210045c7a7f776a7db7aa3
 
+`client` - React client folder;
+`server` - Laravel server folder;
+`doc` - Ten folder zawiera początkowe entities i pomysły na modele związane z zadaniem.
 
 # Jak uruchomić projekt? (server) 
 
