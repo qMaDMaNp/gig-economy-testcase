@@ -1,3 +1,11 @@
+import {
+  Typography
+} from '@mui/material';
+
 export default function ManagersPage() {
-  return <h1>Managers Page</h1>;
+  return (
+    <Typography variant="h6" color="initial">
+      Managers
+    </Typography>
+  )
 }

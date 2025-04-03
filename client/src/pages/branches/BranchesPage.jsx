@@ -2,16 +2,14 @@ import { useState, useEffect } from 'react';
 
 import {
   Box,
-  Button,
   Grid,
   Typography,
   Skeleton,
   Stack
 } from '@mui/material';
 
-import { Add as AddIcon } from '@mui/icons-material';
-
 import BranchCard from './page-components/branches-page/BranchCard';
+import BranchCreateDialog from './page-components/branches-page/BranchCreateDialog';
 
 import { getBranches } from '../../../api/branches';
 
@@ -20,15 +18,27 @@ export default function BranchesPage() {
   const [branches, setBranches] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const isEmpty = !isLoading && !branches.length;
+
   useEffect(() => {
     (async () => {
       const branchesRes = await getBranches();
+      const branches = branchesRes.data?.data;
 
-      console.log(branchesRes)
-      setBranches(branchesRes.data);
+      setBranches(branches);
       setIsLoading(false);
     })();
   }, []);
+
+  const updateList = async () => {
+    setIsLoading(true);
+
+    const branchesRes = await getBranches();
+    const branches = branchesRes.data?.data;
+
+    setBranches(branches);
+    setIsLoading(false);
+  };
 
   return (
     <Box sx={{ p: 2 }}>
@@ -37,14 +47,18 @@ export default function BranchesPage() {
           Branches ({branches.length})
         </Typography>
 
-        <Button variant="outlined" startIcon={<AddIcon />}>
-          New Branch
-        </Button>
+        <BranchCreateDialog {...{ updateList }} />
       </Box>
+
+      {isEmpty && (
+        <Typography textAlign="center" variant="body1" color="initial">
+          Nie masz żadnych oddziałów
+        </Typography>
+      )}
 
       {isLoading ? (
         <Grid container gap={2}>
-          {Array(4).fill(0).map((x ,idx) => (
+          {Array(4).fill(0).map((x, idx) => (
             <Grid key={idx}>
               <Stack spacing={0.5}>
                 <Skeleton variant="rounded" width={210} height={118} />

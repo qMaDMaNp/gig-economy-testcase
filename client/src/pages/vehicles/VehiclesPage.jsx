@@ -1,3 +1,11 @@
+import {
+  Typography
+} from '@mui/material';
+
 export default function VehiclesPage() {
-  return <h1>Vehicles Page</h1>;
+  return (
+    <Typography variant="h6" color="initial">
+      Vehicles
+    </Typography>
+  )
 }

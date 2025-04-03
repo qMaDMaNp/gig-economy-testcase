@@ -20,12 +20,12 @@ import {
 
 export default function BranchCard({ branch }) {
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ minWidth: 240, maxWidth: 320, width: '100%' }}>
             <CardActionArea>
                 <CardMedia
                     component="img"
                     height="140"
-                    image={branch.img}
+                    image={branch.img || 'https://thumbs.dreamstime.com/b/no-image-icon-vector-available-picture-symbol-isolated-white-background-suitable-user-interface-element-205805243.jpg'}
                     alt="city img"
                 />
 

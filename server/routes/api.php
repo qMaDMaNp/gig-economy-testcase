@@ -16,6 +16,8 @@ Route::middleware([CorsMiddleware::class])->group(function () {
         Route::get('/{id}', [BranchController::class, 'show']);
 
         Route::post('/', [BranchController::class, 'store']);
+
+        Route::delete('/{id}', [BranchController::class, 'destroy']);
     });
 
     Route::prefix('managers')->group(function () {
