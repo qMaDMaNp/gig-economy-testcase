@@ -4,9 +4,22 @@ Ostatni commit, który zdążyłem zrobić w ciągu 3 godzin, to Add branch card
 
 Link to repo at that point: https://github.com/qMaDMaNp/gig-economy-testcase/tree/5dfc5697cb850c15c0210045c7a7f776a7db7aa3
 
-`client` - React client folder;
-`server` - Laravel server folder;
-`doc` - Ten folder zawiera początkowe entities i pomysły na modele związane z zadaniem.
+### Project folders
+- `client` - React client folder;
+- `server` - Laravel server folder;
+- `doc` - Ten folder zawiera początkowe entities i pomysły na modele związane z zadaniem.
+
+### Project features
+- Create `branch`
+- Get `branches`
+- Test `create branch`
+- UI `branches page`
+- UI `create branch`
+
+# Project screenshots
+![HomePage](doc/home_page.png)
+![NewBranchDialog](doc/new_branch_dialog.png)
+
 
 # Jak uruchomić projekt? (server) 
 
